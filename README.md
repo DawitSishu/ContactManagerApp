@@ -1,4 +1,4 @@
 # ContactManagerApp
 
 
-##API for creating and managing contacts
+API for creating and managing contacts
