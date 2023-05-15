@@ -11,6 +11,7 @@ const userAuthorizationHandler = (req,res,next) =>{
                 throw new Error('user is not allowed to Access');
             }
             req.user = decodedData.user;
+            console.log(decodedData)
             next()
         } );
     }

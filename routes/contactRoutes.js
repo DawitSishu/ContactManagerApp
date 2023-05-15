@@ -5,12 +5,13 @@ const {
     createContact,
     deleteContact,
     getContacts
-} = require('../controllers/contactController')
+} = require('../controllers/contactController');
+const userAuthorizationHandler = require('../middleware/userAuthorizationHandler');
 
 //configure the router
 const router = express.Router()
 
-
+router.use(userAuthorizationHandler)
 
 router.route('/')
     .get( getContacts)
