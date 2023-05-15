@@ -2,6 +2,7 @@
 const asyncHandler = require('express-async-handler')
 const Users  =  require('../models/userModels')
 const bcrypt = require('bcrypt')
+const jwt = require('jsonwebtoken')
 
 
 
@@ -52,11 +53,20 @@ const  loginUser = asyncHandler(async (req,res) =>{
         res.status(404);
         throw new Error("email or password is incorrect");
     }
+    const token = jwt.sign(
+      {  user:{
+            _id: user[0].id,
+            email: user[0].email,
+            username: user[0].username
+        },
+    },
+        process.env.SECRET_KEY,
+        {expiresIn : "5m"}
+    )
     res.status(200).json({
-        _id:user[0].id,
-        email:user[0].email,
-        username:user[0].username
+       token
     })
+
 });
 
 //@desc current logged in  user info
