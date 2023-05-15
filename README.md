@@ -1,7 +1,5 @@
 # ContactManagerApp
 
-# Contact Manager App
-
 A simple contact manager api written in Express.js.
 
 ## Features
@@ -11,7 +9,7 @@ A simple contact manager api written in Express.js.
 * Create and manage user accounts
 * user permissions 
 * user Authentication and Authorization
-* All Data Saved in a remote mongoDB
+* All Data Saved in a  mongoDB
 
 ## Getting Started
 
