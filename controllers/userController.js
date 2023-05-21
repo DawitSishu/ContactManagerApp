@@ -74,7 +74,7 @@ const  loginUser = asyncHandler(async (req,res) =>{
 //@access private
 const  currentUser = asyncHandler(async (req,res) =>{
 //     res.json({msg:"curent user"})
-    res.json({username:req.body.username})
+    res.json({username:req.user.username})
 });
 
 
